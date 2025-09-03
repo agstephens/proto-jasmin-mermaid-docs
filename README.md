@@ -13,18 +13,26 @@ Users will often start their journey with a Python script (`*.py`) or Jupyter No
 flowchart TD
     START --> PY_IPYNB{User has Python or Jupyter Notebook file}
 
-    START ~~~ L2_COMMENT@{ shape: brace-l, label: "<b>Pre-requesites</b>:
+    START ~~~ C1@{ shape: brace-l, label: "<b>Pre-requesites</b>:
         User has <a href='http://help.jasmin.ac.uk/docs/getting-started/get-login-account/'>jasmin-login</a> 
         and <a href='https://help.jasmin.ac.uk/docs/batch-computing/orchid-gpu-cluster/#request-access-to-orchid'>orchid</a> roles" }
 
     PY_IPYNB -->|'.ipynb' file| START_NBS[<a href="https://help.jasmin.ac.uk/docs/interactive-computing/jasmin-notebooks-service/#using-the-jasmin-notebook-service">Start Notebook Service</a>]
     PY_IPYNB -->|'.py' file| CONVERT_PY[Convert to Ipython Notebook]
 
-    PY_IPYNB ~~~ L3_COMMENT@{ shape: brace-r, label: "Simple method: paste sections of Python script into Notebook cells"}
+    PY_IPYNB ~~~ C2@{ shape: brace-r, label: "Simple method: paste sections of Python script into Notebook cells"}
 
-    CONVERT_PY --> START_NBS --> DATA_NEEDS[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-data-access">Manage Data Requirements</a><br/>E.g. CEDA Archive, GWS, external access]
+    CONVERT_PY --> START_NBS
+    START_NBS ~~~ C3@{ shape: brace-r, label: "Plan data inputs and outputs.<br/>Do you have space to write your data files?"}
+    
+    START_NBS --> DATA_NEEDS[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-data-access">Manage Data Requirements</a><br/>E.g. CEDA Archive, GWS, external access]
 
+    DATA_NEEDS --> SW_NEEDS{Does 'Jaspy' environment provide all software requirements?}
 
+    SW_NEEDS -->|Yes| TEST_RUN[Test run workflow with small data volume]
+    SW_NEEDS -->|No| SW_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-software-environments">Install and build software environments</a>]
+
+    SW_NEEDS --> TEST_RUN
 
 ```
 
