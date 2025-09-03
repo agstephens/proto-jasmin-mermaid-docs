@@ -10,7 +10,7 @@ I haven't worked out how to use internal links within Mermaid `href` elements so
 Users will often start their journey with a Python script (`*.py`) or Jupyter Notebook (`*.ipynb`). They will typically do exploratory work using the [JASMIN Notebook Service](https://help.jasmin.ac.uk/docs/interactive-computing/jasmin-notebooks-service/), and then may scale up their workflow by migrating to the Slurm cluster (using the ORCHID partition in the case of GPU/ML work). This flowchart is designed to help you understand the various stages that are involved in setting up, testing, running and scaling a scientific workflow on JASMIN.
 
 ```mermaid
-flowchart TD
+ flowchart TD
     START --> PY_IPYNB{User has Python or Jupyter Notebook file}
 
     START ~~~ C1@{ shape: brace-l, label: "<b>Pre-requesites</b>:
@@ -32,7 +32,17 @@ flowchart TD
     SW_NEEDS -->|Yes| TEST_RUN[Test run workflow with small data volume]
     SW_NEEDS -->|No| SW_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-software-environments">Install and build software environments</a>]
 
-    SW_NEEDS --> TEST_RUN
+    SW_INSTALL --> TEST_RUN
+    SW_NEEDS ~~~ C3@{ shape: brace-r, label: "<b>Test and iterate - consider:</b>
+    - Is data I/O efficient?
+    - Is GPU being utilised (if required)
+    - Is GPU/CUDA usage optimised (if required)
+    - Are local disk read/writes optimised?"}
+    
+    TEST_RUN --> FULL_RUN{Is Notebook Service suitable for the full workflow?}
+
+    FULL_RUN -->|Yes| COMPLETE[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#workflow-completion">Complete the workflow and tidy up</a>]
+    FULL_RUN -->|No| MIGRATE[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#workflow-migration">Migrate workflow to LOTUS or alternative platform</a>]
 
 ```
 
@@ -75,6 +85,16 @@ Managing software environments on JASMIN can be confusing unless you clearly und
    b. GPU-based - GPU interactive node and ORCHID cluster - for Machine Learning and CUDA-optimised code
 
 **INSERT A FLOWCHART HERE....need to work out how it should work!!!**
+
+## Managing Data Workflows on JASMIN
+
+When building a data workflow on 
+
+### Workflow Migration
+
+### Workflow Completion
+
+
 
 ## Managing your $HOME directory on JASMIN
 
