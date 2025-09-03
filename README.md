@@ -78,11 +78,11 @@ To optimise your workflows, it is often useful to set up _data reader_ functions
 
 Managing software environments on JASMIN can be confusing unless you clearly understand some of the key distinctions. This section tells you what you need to know in order to create and build environments that will work on the various JASMIN systems:
 1. JASMIN Notebook Service:
-   a. CPU-based - standard
-   b. GPU-based - for Machine Learning and CUDA-optimised code
+   - CPU-based - standard
+   - GPU-based - for Machine Learning and CUDA-optimised code
 3. Scientific Analysis Servers and Batch System (LOTUS):
-   a. CPU-based - `sci` servers and main LOTUS cluster
-   b. GPU-based - GPU interactive node and ORCHID cluster - for Machine Learning and CUDA-optimised code
+   - CPU-based - `sci` servers and main LOTUS cluster
+   - GPU-based - GPU interactive node and ORCHID cluster - for Machine Learning and CUDA-optimised code
 
 **INSERT A FLOWCHART HERE....need to work out how it should work!!!**
 
