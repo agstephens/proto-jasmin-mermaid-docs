@@ -77,7 +77,7 @@ flowchart TD
     C -->|Three| F[fa:fa-car Car]
     
     click B href "https://github.com" "Link to GitHub"
-    click C "./#Ideas"
+    click C "#Here"
 ```
 
 
