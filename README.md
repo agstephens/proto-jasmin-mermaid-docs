@@ -99,6 +99,33 @@ To optimise your workflows, it is often useful to set up _data reader_ functions
     - this would involve adding in new dimensions and concatenating along them.
     - this would only work if `t, z, y, x` are identical - so might be irrelevant for much of CMIP.
 
+## Managing your $HOME directory on JASMIN
+
+Your `$HOME` directory has a quota of 100GB, but users often fill this up. When you home directory is full, you may see strange behaviours on JASMIN that do not immediately indicate the problem is that you have exceeded your quota. Although _data_ is the common cause of exceedence, modern software installations can also be many GBs in size. In particularly, ML packages such as `pytorch` and `tensorflow` can severely bloat a software environment.
+
+### Checking your $HOME directory usage
+
+To check your current `$HOME` directory usage, on a `sci` server, type:
+
+```bash
+pdu -sh $HOME
+``` 
+
+### What is filling up your $HOME directory?
+
+Here are some common locations within your `$HOME` directory where large files may be found:
+- `.local/lib*/python*/site-packages` (NOTE: the `*` represent wild-cards, you may have multiple instances of each)
+- `.miniconda`
+- `miniconda`
+- `.conda`
+- `conda`
+- large downloads like the `Miniconda` installation file
+- other packages that have been installed under `dot` directories: `~/.*`
+
+### Tips for clearing space in your $HOME directory
+
+- Can you move data from your `$HOME` directory to a Group Workspace?
+- Can you move large code installations to a _Small-files_ Group Workspace? 
 
 ## Example mermaid diagram
 
