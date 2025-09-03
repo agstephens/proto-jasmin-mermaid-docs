@@ -75,7 +75,7 @@ flowchart TD
     C -->|One| D[Laptop]
     C -->|Two| E[iPhone]
     C -->|Three| F[fa:fa-car Car]
-    D[an <b>important</b> <a href='#Here'>link</a>]
+    D[an <b>important</b> <a href='/#Here'>link</a>]
     click B href "https://github.com" "Link to GitHub"
     click C "#Here"
 ```
