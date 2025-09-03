@@ -15,14 +15,17 @@ flowchart TD
 
     START ~~~ L2_COMMENT@{ shape: brace-l, label: "<b>Pre-requesites</b>:
         User has <a href='http://help.jasmin.ac.uk/docs/getting-started/get-login-account/'>jasmin-login</a> 
-        and <a href='https://help.jasmin.ac.uk/docs/batch-computing/orchid-gpu-cluster/#request-access-to-orchid'><u>orchid</u></a> roles" }
+        and <a href='https://help.jasmin.ac.uk/docs/batch-computing/orchid-gpu-cluster/#request-access-to-orchid'>orchid</a> roles" }
 
     PY_IPYNB -->|'.ipynb' file| START_NBS[<a href="https://help.jasmin.ac.uk/docs/interactive-computing/jasmin-notebooks-service/#using-the-jasmin-notebook-service">Start Notebook Service</a>]
     PY_IPYNB -->|'.py' file| CONVERT_PY[Convert to Ipython Notebook]
 
     PY_IPYNB ~~~ L3_COMMENT@{ shape: brace-r, label: "Simple method: paste sections of Python script into Notebook cells"}
 
-    CONVERT_PY --> START_NBS --> DATA_NEEDS[<a href="#Managing Data Access"><u>Manage Data Requirements</u></a><br/>E.g. CEDA Archive, GWS, external access]
+    CONVERT_PY --> START_NBS --> DATA_NEEDS[<a href="#Managing Data Access">Manage Data Requirements</a><br/>E.g. CEDA Archive, GWS, external access]
+
+
+
 ```
 
 [hello](#Here)
