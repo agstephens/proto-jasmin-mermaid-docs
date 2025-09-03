@@ -12,6 +12,7 @@ Users will often start their journey with a Python script (`*.py`) or Jupyter No
 
 ```mermaid
  flowchart TD
+ flowchart TD
     START --> PY_IPYNB{User has Python or Jupyter Notebook file}
 
     START ~~~ C1@{ shape: brace-l, label: "<b>Prerequesites</b>:
@@ -30,9 +31,9 @@ Users will often start their journey with a Python script (`*.py`) or Jupyter No
 
     DATA_NEEDS --> SW_NEEDS{<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#software-management">Options for managing software needs</a>}
 
-    SW_NEEDS -->|1. Use built-in Jaspy environment with no modifications| TEST_RUN[Test run workflow with small data volume]
-    SW_NEEDS -->|2. Plan to build a local Python virtual environment| VENV_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#building-virtual-environments">Install and build a Python virtual environment</a>]
-    SW_NEEDS -->|3. Plan to use Dask Gateway and will build a local Conda environment| CONDA_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#building-conda-environments">Install and build a Conda environment</a>]
+    SW_NEEDS -->|Use built-in Jaspy environment with no modifications| TEST_RUN[Test run workflow with small data volume]
+    SW_NEEDS -->|Plan to build a local Python virtual environment| VENV_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#building-virtual-environments">Install and build a Python virtual environment</a>]
+    SW_NEEDS -->|Plan to use Dask Gateway and will build a local Conda environment| CONDA_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#building-conda-environments">Install and build a Conda environment</a>]
 
     VENV_INSTALL --> TEST_RUN
     SW_NEEDS ~~~ C3@{ shape: brace-r, label: "<b>Test and iterate - consider:</b>
@@ -43,11 +44,17 @@ Users will often start their journey with a Python script (`*.py`) or Jupyter No
     
     TEST_RUN --> FULL_RUN{Is Notebook Service suitable for the full workflow?}
 
+    TEST_RUN ~~~ C4@{ shape: brace-l, label: "**Notebook Service has limited resource**
+    - Migrate to batch system (LOTUS/ORCHID)?
+    - Convert to using Dask-Gateway (with Conda env)?
+    - Migrate to alternative platform (e.g. ISAMBARD-AI)?"}
+
     FULL_RUN -->|Yes| COMPLETE[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#workflow-completion">Complete the workflow and tidy up</a>]
     FULL_RUN -->|No| MIGRATE[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#workflow-migration">Migrate workflow to LOTUS or alternative platform</a>]
 
 ```
 
+---
 
 ## Managing Data Access
 
@@ -75,6 +82,8 @@ To optimise your workflows, it is often useful to set up _data reader_ functions
   - In tools like `xarray` and `cfpython`:
     - this would involve adding in new dimensions and concatenating along them.
     - this would only work if `t, z, y, x` are identical - so might be irrelevant for much of CMIP.
+
+---
 
 ## Managing Software Environments
 
