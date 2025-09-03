@@ -12,7 +12,6 @@ Users will often start their journey with a Python script (`*.py`) or Jupyter No
 
 ```mermaid
  flowchart TD
- flowchart TD
     START --> PY_IPYNB{User has Python or Jupyter Notebook file}
 
     START ~~~ C1@{ shape: brace-l, label: "<b>Prerequesites</b>:
