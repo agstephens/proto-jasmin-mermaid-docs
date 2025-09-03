@@ -11,6 +11,12 @@ I haven't worked out how to use internal links within Mermaid `href` elements so
 Users will often start their journey with a Python script (`*.py`) or Jupyter Notebook (`*.ipynb`). They will typically do exploratory work using the [JASMIN Notebook Service](https://help.jasmin.ac.uk/docs/interactive-computing/jasmin-notebooks-service/), and then may scale up their workflow by migrating to the Slurm cluster (using the ORCHID partition in the case of GPU/ML work). This flowchart is designed to help you understand the various stages that are involved in setting up, testing, running and scaling a scientific workflow on JASMIN.
 
 ```mermaid
+---
+config:
+  theme: 'default'
+  themeVariables:
+    fontSize: 9pt
+---
  flowchart TD
     START --> PY_IPYNB{User has Python or Jupyter Notebook file}
 
@@ -165,6 +171,12 @@ When building a data workflow on
 Many users will develop a workflow in a Jupyter Notebook and scale it up on to the LOTUS cluster. In the case of Machine Learning workflows, they will also require use of the GPU-nodes on LOTUS, known as ORCHID. This flowchart helps you navigate the various stages required to move from a single Notebook file through to a large-scale deployed and completed workflow.
 
 ```mermaid
+---
+config:
+  theme: 'default'
+  themeVariables:
+    fontSize: 9pt
+---
 flowchart TD
     NB[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#python-best-practice">Convert Jupyter Notebook to a Python script and library</a>]
 
