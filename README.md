@@ -102,7 +102,23 @@ Managing software environments on JASMIN can be confusing unless you clearly und
    - CPU-based - `sci` servers and main LOTUS cluster
    - GPU-based - GPU interactive node and ORCHID cluster - for Machine Learning and CUDA-optimised code
 
-**INSERT A FLOWCHART HERE....need to work out how it should work!!!**
+```mermaid
+---
+config:
+  theme: 'default'
+  themeVariables:
+    fontSize: 9pt
+---
+ flowchart TD
+    START --> PY_IPYNB{User has Python or Jupyter Notebook file}
+
+    C1@{ shape: brace-r, label: "<b>Prerequesites</b>:
+        User has <a href='http://help.jasmin.ac.uk/docs/getting-started/get-login-account/'>jasmin-login</a> 
+        and <a href='https://help.jasmin.ac.uk/docs/batch-computing/orchid-gpu-cluster/#request-access-to-orchid'>orchid</a> roles" } ~~~ PY_IPYNB
+
+    PY_IPYNB -->|'.ipynb' file| START_NBS[<a href="https://help.jasmin.ac.uk/docs/interactive-computing/jasmin-notebooks-service/#using-the-jasmin-notebook-service">Start Notebook Service</a>]
+    PY_IPYNB -->|'.py' file| CONVERT_PY[Convert to Ipython Notebook]
+```
 
 ### Python Best Practice
 
