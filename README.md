@@ -115,6 +115,33 @@ This sections outlines some best practice advice for how you write, structure, t
 - Using GitHub for tracing, testing, sharing, publication
 - Publishing to PyPI
 
+### Managing Software Dependencies
+
+Most scripts and notebooks will import software packages or libraries. In the case of Python, some libraries are provided as part of the [Python Standard Library](https://docs.python.org/library/index.html) (such as `math` and `os`). However, scientific work typically uses many external open-source libraries (such as `pandas` and `numpy`).
+
+In order to make your code reproducible and sharable, we strongly advise that you record your software dependencies using `requirements` files, as discussed below.
+
+#### Managing your dependencies using a "requirements" file
+
+The simplest way to package up your software dependencies is to list them in a `requirements.txt` file, such as:
+
+```bash
+$ cat requirements.txt
+numpy
+pandas
+sklearn
+```
+
+The environment can then be installed with a single `pip` command:
+
+```bash
+$ pip install -r requirements.txt
+```
+##### Advanced and reusable use of "requirements" files
+
+...more info here about `pip compile` etc...
+
+
 ### Building Virtual Environments
 
 ...what python venvs are...how to build them...etc
