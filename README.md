@@ -98,6 +98,23 @@ Managing software environments on JASMIN can be confusing unless you clearly und
 
 **INSERT A FLOWCHART HERE....need to work out how it should work!!!**
 
+### Python Best Practice
+
+This sections outlines some best practice advice for how you write, structure, test, publish and deploy Python packages. These are based on sound guidelines for code reusability and sharing.
+
+...more here...including:
+- Refactoring a Python script/notebook into a script and a library
+- Running a Python script with inputs from:
+  - The command-line
+  - Configuration files
+  - Environment variables
+- Structuring your code for re-use and sharing
+- Managing your software dependencies
+  - Using `requirements` files
+    - simple...to...advanced
+- Using GitHub for tracing, testing, sharing, publication
+- Publishing to PyPI
+
 ### Building Virtual Environments
 
 ...what python venvs are...how to build them...etc
