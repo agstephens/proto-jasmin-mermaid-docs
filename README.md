@@ -120,7 +120,18 @@ When building a data workflow on
 
 Many users will develop a workflow in a Jupyter Notebook and scale it up on to the LOTUS cluster. In the case of Machine Learning workflows, they will also require use of the GPU-nodes on LOTUS, known as ORCHID. This flowchart helps you navigate the various stages required to move from a single Notebook file through to a large-scale deployed and completed workflow.
 
+```mermaid
+flowchart TD
+    NB[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#python-packaging-best-practice">Convert Jupyter Notebook to a Python script and library</a>]
 
+    NB --> CODE_READY[Code refactored into a script and library of reusable components]
+
+    NB ~~~ C1@{ shape: brace-l, label: "Factor out changeable settings to</b>:
+        - command-line arguments
+        - configuration files"}
+
+    CODE_READY --> DEPS[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-software-dependencies">Capture software dependencies</a>]
+```
 
 ### Workflow Completion
 
