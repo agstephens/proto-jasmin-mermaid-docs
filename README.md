@@ -136,19 +136,22 @@ flowchart TD
     KERNEL --> RELOAD[Reload page #40;by refreshing browser#41;]
 
     RELOAD --> LAUNCH_NB[Start the Notebook Launcher and select your new kernel]
-    LAUNCH_NB --> TEST_IMPORTS[Test imports of your software requirements]
+    LAUNCH_NB --> TEST_IMP_JNS[Test software imports]
 
-    TEST_IMPORTS --> RUN_NB[Run the Jupyter Notebook]
+    TEST_IMP_JNS --> RUN_NB[Run the Jupyter Notebook]
 
     JNS -->|No| GPU_SCI{Do you need access to GPUs?<br/>#40;For Machine Learning / CUDA#41;}
     GPU_SCI -->|Yes| LOGIN_GPU[Login to interactive GPU node]
     GPU_SCI -->|No| LOGIN_CPU[Login to <code>sci</code> server]
 
+    LOGIN_GPU --> JASPY_BASE[Assume software to be built on<br/>top of <a href="https://help.jasmin.ac.uk/docs/software-on-jasmin/jaspy-envs/"><code>Jaspy</code> environment<a/>]
+    JASPY_BASE --> _1[#darr;] --> _2[#darr;] --> VENV_SCI[<a href="">Create virtual environment in Bash session</a>]
 
-    CHECK_GPU ~~~ C1@{ shape: brace-l, label: "<b>Prerequesites</b>:
-        User has <a href='http://help.jasmin.ac.uk/docs/getting-started/get-login-account/'>jasmin-login</a> 
-        and <a href='https://help.jasmin.ac.uk/docs/batch-computing/orchid-gpu-cluster/#request-access-to-orchid'>orchid</a> roles" }
+    VENV_SCI --> _3[#darr;] --> _4[#darr;] --> _5[#darr;] --> TEST_IMP_SCI[Test software imports]
+    TEST_IMP_SCI --> RUN_SCI[Run the workflow]
 
+    JNS_BASH ~~~ C1@{ shape: braces, label: "NOTE: Special <code>pip</code> command<br/>to avoid <code>~/.local</code> directory" }
+    TEST_IMP_SCI ~~~ C2@{ shape: brace-l, label: "You may need to<br/><a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#workflow-migration">migrate to Slurm</a>"}
 
 ```
 
