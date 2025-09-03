@@ -64,6 +64,18 @@ To optimise your workflows, it is often useful to set up _data reader_ functions
     - this would involve adding in new dimensions and concatenating along them.
     - this would only work if `t, z, y, x` are identical - so might be irrelevant for much of CMIP.
 
+## Managing Software Environments
+
+Managing software environments on JASMIN can be confusing unless you clearly understand some of the key distinctions. This section tells you what you need to know in order to create and build environments that will work on the various JASMIN systems:
+1. JASMIN Notebook Service:
+   a. CPU-based - standard
+   b. GPU-based - for Machine Learning and CUDA-optimised code
+3. Scientific Analysis Servers and Batch System (LOTUS):
+   a. CPU-based - `sci` servers and main LOTUS cluster
+   b. GPU-based - GPU interactive node and ORCHID cluster - for Machine Learning and CUDA-optimised code
+
+**INSERT A FLOWCHART HERE....need to work out how it should work!!!**
+
 ## Managing your $HOME directory on JASMIN
 
 Your `$HOME` directory has a quota of 100GB, but users often fill this up. When you home directory is full, you may see strange behaviours on JASMIN that do not immediately indicate the problem is that you have exceeded your quota. Although _data_ is the common cause of exceedence, modern software installations can also be many GBs in size. In particularly, ML packages such as `pytorch` and `tensorflow` can severely bloat a software environment.
