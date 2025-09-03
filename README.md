@@ -109,6 +109,8 @@ Managing software environments on JASMIN can be confusing unless you clearly und
 
 ...how to setup a conda env that will work across the Notebook and Sci/Batch estates seamlessly...
 
+---
+
 ## Managing Data Workflows on JASMIN
 
 When building a data workflow on 
@@ -144,7 +146,7 @@ Additionally, we strongly encourage you to _tidy up_ the content that remain on 
 - data stored on Object Store or in the Transfer Cache
 - Others???
 
-## Managing your $HOME directory on JASMIN
+## Managing your HOME directory
 
 Your `$HOME` directory has a quota of 100GB, but users often fill this up. When you home directory is full, you may see strange behaviours on JASMIN that do not immediately indicate the problem is that you have exceeded your quota. Although _data_ is the common cause of exceedence, modern software installations can also be many GBs in size. In particularly, ML packages such as `pytorch` and `tensorflow` can severely bloat a software environment.
 
@@ -171,20 +173,3 @@ Here are some common locations within your `$HOME` directory where large files m
 
 - Can you move data from your `$HOME` directory to a Group Workspace?
 - Can you move large code installations to a [_Small-files_ Group Workspace](https://help.jasmin.ac.uk/docs/short-term-project-storage/faqs-storage/#2-issues-with-small-files)? 
-
-## Example mermaid diagram
-
-```mermaid
-
-flowchart TD
-    A[Christmas] -->|Get money| B(I link to GitHub)
-    B --> C{I link to this doc}
-    C -->|One| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F[fa:fa-car Car]
-    D[an <b>important</b> <a href='https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#Here'>link</a>]
-    click B href "https://github.com" "Link to GitHub"
-    click C "https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#Here"
-```
-
-
