@@ -14,7 +14,7 @@ flowchart TD
     START --> PY_IPYNB{User has Python or Jupyter Notebook file}
 
     START ~~~ L2_COMMENT@{ shape: brace-l, label: "<b>Pre-requesites</b>:
-        User has <a href='http://help.jasmin.ac.uk/docs/getting-started/get-login-account/'><u>jasmin-login</u></a> 
+        User has <a href='http://help.jasmin.ac.uk/docs/getting-started/get-login-account/'>jasmin-login</a> 
         and <a href='https://help.jasmin.ac.uk/docs/batch-computing/orchid-gpu-cluster/#request-access-to-orchid'><u>orchid</u></a> roles" }
 
     PY_IPYNB -->|'.ipynb' file| START_NBS[<a href="https://help.jasmin.ac.uk/docs/interactive-computing/jasmin-notebooks-service/#using-the-jasmin-notebook-service">Start Notebook Service</a>]
