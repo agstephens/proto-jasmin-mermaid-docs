@@ -175,6 +175,34 @@ flowchart TD
         - configuration files"}
 
     CODE_READY --> DEPS[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-software-dependencies">Capture software dependencies</a>]
+
+    CODE_READY ~~~ C2@{ shape: brace-l, label: "'requirements.txt' file<br/>listing dependencies"}
+
+    CODE_READY --> GPU_REQ[Do you require GPUs?]
+
+    GPU_REQ -->|No| CPU_NODE[Create environment on <code>sci</code> server] --> WRAPPER
+    GPU_REQ -->|Yes| GPU_NODE[Login to interactive GPU node<br/>to create GPU-aware environment] --> WRAPPER
+
+    WRAPPER[Write Bash wrapper script:<br/><code>setup-env.sh</code>] --> TEST_RUN[Run 1 iteration on Slurm node]
+
+    WRAPPER ~~~ C2@{ shape: brace-r, label: "<b>Best practice considerations:</b>
+    - Implement restarts
+    - Avoid re-work
+    - Save results
+    - Employ <i>map-reduce</i> pattern
+    - Use Slurm Job Arrays
+    - Use multiple GPUs (if relevant)
+    - Optimise use of GPUs (if relevant)"}
+
+    TEST_RUN --> REFINE[Refine resource needs #40;per job#41;:
+    - Duration, CPU, Memory, GPU, exclusive/shared node]
+
+    TEST_RUN ~~~ C3@{ shape: brace-l, label: "Accurate resource requests<br/>mean your <b>jobs run quicker!</b>"}
+
+    REFINE --> FULL_RUN[Submit and run entire workflow]
+
+    FULL_RUN -->|Yes| COMPLETE[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#workflow-completion">Complete the workflow and tidy up</a>]
+
 ```
 
 ### Workflow Completion
