@@ -76,7 +76,8 @@ flowchart TD
     C -->|Two| E[iPhone]
     C -->|Three| F[fa:fa-car Car]
     
-    click B href "./#Ideas" "Link to ideas"
+    click B href "https://github.com" "Link to GitHub"
+    click C "./#Ideas"
 ```
 
 
