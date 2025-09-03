@@ -34,7 +34,7 @@ Users will often start their journey with a Python script (`*.py`) or Jupyter No
     SW_NEEDS -->|Plan to build a local Python virtual environment| VENV_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#building-virtual-environments">Install and build a Python virtual environment</a>]
     SW_NEEDS -->|Plan to use Dask-Gateway and will build a local Conda environment| CONDA_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#using-dask-gateway">Install and build a Conda environment for Dask-Gateway</a>]
 
-    DATA_NEEDS ~~~ C4@{ shape: brace-l, label: "<b>WARNING!</b><a href='https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-your-home-directory'>Check your HOME directory<br/>doesn't fill up!</a>"}
+    DATA_NEEDS ~~~ C4@{ shape: brace-l, label: "<b>WARNING!</b><br/><a href='https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-your-home-directory'>Check your HOME directory<br/>doesn't fill up!</a>"}
     VENV_INSTALL --> TEST_RUN
 
     TEST_RUN --> FULL_RUN{Is Notebook Service suitable for the full workflow?}
