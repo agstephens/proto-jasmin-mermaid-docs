@@ -115,6 +115,12 @@ When building a data workflow on
 
 ### Workflow Migration
 
+Many users will develop a workflow in a Jupyter Notebook and scale it up on to the LOTUS cluster. In the case of Machine Learning workflows, they will also require use of the GPU-nodes on LOTUS, known as ORCHID. This flowchart helps you navigate the various stages required to move from a single Notebook file through to a large-scale deployed and completed workflow.
+
+
+
+### Workflow Completion
+
 Once you have completed your workflow on JASMIN, there are a number of possible follow-up tasks that you should consider:
 - Publish your code to:
   - A GitHub (or other) public/private repository
@@ -137,10 +143,6 @@ Additionally, we strongly encourage you to _tidy up_ the content that remain on 
 - data stored on `scratch` disk or GWSs
 - data stored on Object Store or in the Transfer Cache
 - Others???
-
-### Workflow Completion
-
-
 
 ## Managing your $HOME directory on JASMIN
 
