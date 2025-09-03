@@ -72,25 +72,35 @@ dsf
 dsf
 sdfsd
 
-## Mermaid
+## Managing Data Requirements
 
- skdj sdf
- dsf
- dsf
- sf
- 
- 
- sdf 
- sf
- sf
-  sf
-  s fs
-   fs
-    s
-    
-    
-    s fds
-    
+When working with data on JASMIN you may need to access scientific data from multiple sources, including:
+- The CEDA Archive (reading files locally)
+- JASMIN Group Workspaces (reading files locally)
+- Data held on Object Store or other locations
+- Scratch Disk
+- External sources
+
+To optimise your workflows, it is often useful to set up _data reader_ functions or classes that receive your data requirements (e.g. experiment, variable, temporal range, spatial selection) and return either a list/iterator of file paths or data objects (such as `xarray Dataset`, `cfpython FieldLists` or `iris Cubes`).
+
+### Setting up data readers
+
+**Internal notes...that we could build on...:**
+- use a common approach to various packages
+- local (`/badc`) vs remote (`https`) access
+- Usability on ISAMBARD AI and CoLab, as well as JASMIN
+- Generic approaches to loading/templating
+- Applications/mapping to Machine Learning Data Loaders in common packages (`pytorch, tensorflow, JAX`)
+- Potential use of CEDA DataPoint
+- Delayed (_lazy_) loading of the actual data until it is needed
+- Loading of different feature types:
+  - 7D data all the way down to 1D data
+  - In tools like `xarray` and `cfpython`:
+    - this would involve adding in new dimensions and concatenating along them.
+    - this would only work if `t, z, y, x` are identical - so might be irrelevant for much of CMIP.
+
+
+## Example mermaid diagram
 
 ```mermaid
 
