@@ -28,49 +28,6 @@ flowchart TD
 
 ```
 
-[hello](#Here)
-
-sfs
-sd
-fs
-ds
-
-
-sdf
-sdf
-sdf
-
-
-sd
-f
-sdf
-
-dsf
-dsf
-
-f
-f
-dsf
-dsf
-dsf
-sdf
-sfs
-
-
-## Here
-
-fsdf sdf
-sf
-ds
-f
-
-sd
-f
-dsf
-s
-dsf
-dsf
-sdfsd
 
 ## Managing Data Access
 
@@ -125,7 +82,7 @@ Here are some common locations within your `$HOME` directory where large files m
 ### Tips for clearing space in your $HOME directory
 
 - Can you move data from your `$HOME` directory to a Group Workspace?
-- Can you move large code installations to a _Small-files_ Group Workspace? 
+- Can you move large code installations to a [_Small-files_ Group Workspace](https://help.jasmin.ac.uk/docs/short-term-project-storage/faqs-storage/#2-issues-with-small-files)? 
 
 ## Example mermaid diagram
 
