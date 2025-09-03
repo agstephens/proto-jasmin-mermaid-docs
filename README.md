@@ -166,7 +166,7 @@ Many users will develop a workflow in a Jupyter Notebook and scale it up on to t
 
 ```mermaid
 flowchart TD
-    NB[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#python-packaging-best-practice">Convert Jupyter Notebook to a Python script and library</a>]
+    NB[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#python-best-practice">Convert Jupyter Notebook to a Python script and library</a>]
 
     NB --> CODE_READY[Code refactored into a script and library of reusable components]
 
