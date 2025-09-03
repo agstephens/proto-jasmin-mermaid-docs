@@ -14,14 +14,14 @@ Users will often start their journey with a Python script (`*.py`) or Jupyter No
  flowchart TD
     START --> PY_IPYNB{User has Python or Jupyter Notebook file}
 
-    START ~~~ C1@{ shape: brace-l, label: "<b>Prerequesites</b>:
+    C1@{ shape: brace-l, label: "<b>Prerequesites</b>:
         User has <a href='http://help.jasmin.ac.uk/docs/getting-started/get-login-account/'>jasmin-login</a> 
-        and <a href='https://help.jasmin.ac.uk/docs/batch-computing/orchid-gpu-cluster/#request-access-to-orchid'>orchid</a> roles" }
+        and <a href='https://help.jasmin.ac.uk/docs/batch-computing/orchid-gpu-cluster/#request-access-to-orchid'>orchid</a> roles" } ~~~ PY_IPYNB
 
     PY_IPYNB -->|'.ipynb' file| START_NBS[<a href="https://help.jasmin.ac.uk/docs/interactive-computing/jasmin-notebooks-service/#using-the-jasmin-notebook-service">Start Notebook Service</a>]
     PY_IPYNB -->|'.py' file| CONVERT_PY[Convert to Ipython Notebook]
 
-    PY_IPYNB ~~~ C2@{ shape: brace-r, label: "Simple method: paste sections of Python script into Notebook cells"}
+    PY_IPYNB ~~~ C2@{ shape: brace-l, label: "Simple method: paste sections of Python script into Notebook cells"}
 
     CONVERT_PY --> START_NBS
     START_NBS ~~~ C3@{ shape: brace-r, label: "Plan data inputs and outputs.<br/>Do you have space to write your data files?"}
@@ -34,23 +34,24 @@ Users will often start their journey with a Python script (`*.py`) or Jupyter No
     SW_NEEDS -->|Plan to build a local Python virtual environment| VENV_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#building-virtual-environments">Install and build a Python virtual environment</a>]
     SW_NEEDS -->|Plan to use Dask-Gateway and will build a local Conda environment| CONDA_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#using-dask-gateway">Install and build a Conda environment for Dask-Gateway</a>]
 
+    DATA_NEEDS ~~~ C4@{ shape: brace-l, label: "<b>WARNING!</b><a href='https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-your-home-directory'>Check your HOME directory<br/>doesn't fill up!</a>"}
     VENV_INSTALL --> TEST_RUN
-    SW_NEEDS ~~~ C3@{ shape: brace-r, label: "<b>Test and iterate - consider:</b>
+
+    TEST_RUN --> FULL_RUN{Is Notebook Service suitable for the full workflow?}
+
+    C5@{ shape: brace-r, label: "<b>Test and iterate - consider:</b>
     - Is data I/O efficient?
     - Is GPU being utilised (if required)
     - Is GPU/CUDA usage optimised (if required)
-    - Are local disk read/writes optimised?"}
-    
-    TEST_RUN --> FULL_RUN{Is Notebook Service suitable for the full workflow?}
+    - Are local disk read/writes optimised?"} ~~~ FULL_RUN
 
-    TEST_RUN ~~~ C4@{ shape: brace-l, label: "**Notebook Service has limited resource**
+    TEST_RUN ~~~ C6@{ shape: brace-l, label: "**Notebook Service has limited resource**
     - Migrate to batch system (LOTUS/ORCHID)?
     - Convert to using Dask-Gateway (with Conda env)?
     - Migrate to alternative platform (e.g. ISAMBARD-AI)?"}
 
     FULL_RUN -->|Yes| COMPLETE[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#workflow-completion">Complete the workflow and tidy up</a>]
     FULL_RUN -->|No| MIGRATE[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#workflow-migration">Migrate workflow to LOTUS or alternative platform</a>]
-
 ```
 
 ---
