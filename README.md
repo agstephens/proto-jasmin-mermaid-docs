@@ -32,7 +32,7 @@ Users will often start their journey with a Python script (`*.py`) or Jupyter No
 
     SW_NEEDS -->|Use built-in Jaspy environment with no modifications| TEST_RUN[Test run workflow with small data volume]
     SW_NEEDS -->|Plan to build a local Python virtual environment| VENV_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#building-virtual-environments">Install and build a Python virtual environment</a>]
-    SW_NEEDS -->|Plan to use Dask Gateway and will build a local Conda environment| CONDA_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#building-conda-environments">Install and build a Conda environment</a>]
+    SW_NEEDS -->|Plan to use Dask-Gateway and will build a local Conda environment| CONDA_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#using-dask-gateway">Install and build a Conda environment for Dask-Gateway</a>]
 
     VENV_INSTALL --> TEST_RUN
     SW_NEEDS ~~~ C3@{ shape: brace-r, label: "<b>Test and iterate - consider:</b>
@@ -84,23 +84,59 @@ To optimise your workflows, it is often useful to set up _data reader_ functions
 
 ---
 
-## Managing Software Environments
+## Software Management
 
 Managing software environments on JASMIN can be confusing unless you clearly understand some of the key distinctions. This section tells you what you need to know in order to create and build environments that will work on the various JASMIN systems:
 1. JASMIN Notebook Service:
    - CPU-based - standard
+   - CPU-based - with Dask-Gateway for parallel scaling
    - GPU-based - for Machine Learning and CUDA-optimised code
-3. Scientific Analysis Servers and Batch System (LOTUS):
+2. Scientific Analysis Servers and Batch System (LOTUS):
    - CPU-based - `sci` servers and main LOTUS cluster
    - GPU-based - GPU interactive node and ORCHID cluster - for Machine Learning and CUDA-optimised code
 
 **INSERT A FLOWCHART HERE....need to work out how it should work!!!**
+
+### Building Virtual Environments
+
+...what python venvs are...how to build them...etc
+
+## Using Dask-Gateway
+
+...overview...
+
+### Building Conda Environments for use with Dask-Gateway
+
+...how to setup a conda env that will work across the Notebook and Sci/Batch estates seamlessly...
 
 ## Managing Data Workflows on JASMIN
 
 When building a data workflow on 
 
 ### Workflow Migration
+
+Once you have completed your workflow on JASMIN, there are a number of possible follow-up tasks that you should consider:
+- Publish your code to:
+  - A GitHub (or other) public/private repository
+  - PyPI
+- Publish your results to:
+  - A scientific journal
+  - A blog post
+- Publish data data to:
+  - The CEDA Archive
+  - Another data catalogue/repository
+- Publish your Machine Learning model (if relevant) to:
+  - HuggingFace
+- Deploy your model/algorithm as an application/service:
+  - On JASMIN
+  - To the Cloud
+ 
+Additionally, we strongly encourage you to _tidy up_ the content that remain on JASMIN, which might include:
+- local software environments/packages
+- temporary and cache files
+- data stored on `scratch` disk or GWSs
+- data stored on Object Store or in the Transfer Cache
+- Others???
 
 ### Workflow Completion
 
