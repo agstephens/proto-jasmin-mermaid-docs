@@ -104,20 +104,52 @@ Managing software environments on JASMIN can be confusing unless you clearly und
 
 ```mermaid
 ---
-config:
   theme: 'default'
   themeVariables:
     fontSize: 9pt
 ---
- flowchart TD
-    START --> PY_IPYNB{User has Python or Jupyter Notebook file}
+flowchart TD
+    NEED[Need software on JASMIN] --> REQS
 
-    C1@{ shape: brace-r, label: "<b>Prerequesites</b>:
+    REQS[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-your-dependencies-using-a-requirements-file">Capture software dependencies</a>]
+
+    REQS --> JNS[Using JASMIN Notebook Service or<br/> servers #40;<code>sci</code> servers / LOTUS#41;]
+
+    JNS -->|Yes| DASK{Planning to use Dask-Gateway<br/>with Conda environment?}
+
+    USE_DASK[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#using-dask-gateway">See instructions on Dask-Gateway</a>]
+    DASK -->|Yes| USE_DASK
+    DASK -->|No| GPU_JNS{Do you need access to GPUs?<br/>#40;For Machine Learning / CUDA#41;}
+
+    GPU_JNS -->|Yes| START_JNS_GPU[Start Notebook Service with GPUs]
+    GPU_JNS -->|No| START_JNS_CPU[Start Notebook Service with CPUs]
+
+    START_JNS_GPU --> CHECK_GPU[Check access to GPUs]
+
+    JNS_BASH[Start Bash terminal in Notebook Service]
+
+    CHECK_GPU --> JNS_BASH    
+    START_JNS_CPU --> JNS_BASH
+
+    JNS_BASH --> VENV_JNS[<a href="">Create virtual environment in Bash session</a>]
+    VENV_JNS --> KERNEL[<a href="">Create IPython Kernel and install it</a>]
+    KERNEL --> RELOAD[Reload page #40;by refreshing browser#41;]
+
+    RELOAD --> LAUNCH_NB[Start the Notebook Launcher and select your new kernel]
+    LAUNCH_NB --> TEST_IMPORTS[Test imports of your software requirements]
+
+    TEST_IMPORTS --> RUN_NB[Run the Jupyter Notebook]
+
+    JNS -->|No| GPU_SCI{Do you need access to GPUs?<br/>#40;For Machine Learning / CUDA#41;}
+    GPU_SCI -->|Yes| LOGIN_GPU[Login to interactive GPU node]
+    GPU_SCI -->|No| LOGIN_CPU[Login to <code>sci</code> server]
+
+
+    CHECK_GPU ~~~ C1@{ shape: brace-l, label: "<b>Prerequesites</b>:
         User has <a href='http://help.jasmin.ac.uk/docs/getting-started/get-login-account/'>jasmin-login</a> 
-        and <a href='https://help.jasmin.ac.uk/docs/batch-computing/orchid-gpu-cluster/#request-access-to-orchid'>orchid</a> roles" } ~~~ PY_IPYNB
+        and <a href='https://help.jasmin.ac.uk/docs/batch-computing/orchid-gpu-cluster/#request-access-to-orchid'>orchid</a> roles" }
 
-    PY_IPYNB -->|'.ipynb' file| START_NBS[<a href="https://help.jasmin.ac.uk/docs/interactive-computing/jasmin-notebooks-service/#using-the-jasmin-notebook-service">Start Notebook Service</a>]
-    PY_IPYNB -->|'.py' file| CONVERT_PY[Convert to Ipython Notebook]
+
 ```
 
 ### Python Best Practice
