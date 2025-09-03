@@ -14,7 +14,7 @@ Users will often start their journey with a Python script (`*.py`) or Jupyter No
  flowchart TD
     START --> PY_IPYNB{User has Python or Jupyter Notebook file}
 
-    C1@{ shape: brace-l, label: "<b>Prerequesites</b>:
+    C1@{ shape: brace-r, label: "<b>Prerequesites</b>:
         User has <a href='http://help.jasmin.ac.uk/docs/getting-started/get-login-account/'>jasmin-login</a> 
         and <a href='https://help.jasmin.ac.uk/docs/batch-computing/orchid-gpu-cluster/#request-access-to-orchid'>orchid</a> roles" } ~~~ PY_IPYNB
 
