@@ -22,7 +22,7 @@ flowchart TD
 
     PY_IPYNB ~~~ L3_COMMENT@{ shape: brace-r, label: "Simple method: paste sections of Python script into Notebook cells"}
 
-    CONVERT_PY --> START_NBS --> DATA_NEEDS[<a href="#Managing Data Access">Manage Data Requirements</a><br/>E.g. CEDA Archive, GWS, external access]
+    CONVERT_PY --> START_NBS --> DATA_NEEDS[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#Managing Data Access">Manage Data Requirements</a><br/>E.g. CEDA Archive, GWS, external access]
 
 
 
