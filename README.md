@@ -13,7 +13,7 @@ Users will often start their journey with a Python script (`*.py`) or Jupyter No
  flowchart TD
     START --> PY_IPYNB{User has Python or Jupyter Notebook file}
 
-    START ~~~ C1@{ shape: brace-l, label: "<b>Pre-requesites</b>:
+    START ~~~ C1@{ shape: brace-l, label: "<b>Prerequesites</b>:
         User has <a href='http://help.jasmin.ac.uk/docs/getting-started/get-login-account/'>jasmin-login</a> 
         and <a href='https://help.jasmin.ac.uk/docs/batch-computing/orchid-gpu-cluster/#request-access-to-orchid'>orchid</a> roles" }
 
@@ -27,12 +27,13 @@ Users will often start their journey with a Python script (`*.py`) or Jupyter No
     
     START_NBS --> DATA_NEEDS[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-data-access">Manage Data Requirements</a><br/>E.g. CEDA Archive, GWS, external access]
 
-    DATA_NEEDS --> SW_NEEDS{Does 'Jaspy' environment provide all software requirements?}
+    DATA_NEEDS --> SW_NEEDS{<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#software-management">Options for managing software needs</a>}
 
-    SW_NEEDS -->|Yes| TEST_RUN[Test run workflow with small data volume]
-    SW_NEEDS -->|No| SW_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-software-environments">Install and build software environments</a>]
+    SW_NEEDS -->|1. Use built-in Jaspy environment with no modifications| TEST_RUN[Test run workflow with small data volume]
+    SW_NEEDS -->|2. Plan to build a local Python virtual environment| VENV_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#building-virtual-environments">Install and build a Python virtual environment</a>]
+    SW_NEEDS -->|3. Plan to use Dask Gateway and will build a local Conda environment| CONDA_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#building-conda-environments">Install and build a Conda environment</a>]
 
-    SW_INSTALL --> TEST_RUN
+    VENV_INSTALL --> TEST_RUN
     SW_NEEDS ~~~ C3@{ shape: brace-r, label: "<b>Test and iterate - consider:</b>
     - Is data I/O efficient?
     - Is GPU being utilised (if required)
