@@ -9,7 +9,21 @@ I haven't worked out how to use internal links within Mermaid `href` elements so
 
 Users will often start their journey with a Python script (`*.py`) or Jupyter Notebook (`*.ipynb`). They will typically do exploratory work using the [JASMIN Notebook Service](https://help.jasmin.ac.uk/docs/interactive-computing/jasmin-notebooks-service/), and then may scale up their workflow by migrating to the Slurm cluster (using the ORCHID partition in the case of GPU/ML work). This flowchart is designed to help you understand the various stages that are involved in setting up, testing, running and scaling a scientific workflow on JASMIN.
 
+```mermaid
+flowchart TD
+    START --> PY_IPYNB{User has Python or Jupyter Notebook file}
 
+    START ~~~ L2_COMMENT@{ shape: brace-l, label: "<b>Pre-requesites</b>:
+        User has <a href='http://help.jasmin.ac.uk/docs/getting-started/get-login-account/'><u>jasmin-login</u></a> 
+        and <a href='https://help.jasmin.ac.uk/docs/batch-computing/orchid-gpu-cluster/#request-access-to-orchid'><u>orchid</u></a> roles" }
+
+    PY_IPYNB -->|'.ipynb' file| START_NBS[<a href="https://help.jasmin.ac.uk/docs/interactive-computing/jasmin-notebooks-service/#using-the-jasmin-notebook-service">Start Notebook Service</a>]
+    PY_IPYNB -->|'.py' file| CONVERT_PY[Convert to Ipython Notebook]
+
+    PY_IPYNB ~~~ L3_COMMENT@{ shape: brace-r, label: "Simple method: paste sections of Python script into Notebook cells"}
+
+    CONVERT_PY --> START_NBS --> DATA_NEEDS[<a href="#Managing Data Access"><u>Manage Data Requirements</u></a><br/>E.g. CEDA Archive, GWS, external access]
+```
 
 [hello](#Here)
 
