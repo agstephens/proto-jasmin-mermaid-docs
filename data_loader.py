@@ -1,5 +1,12 @@
 """
 This is a really simple example Data Loader class to demonstrate the idea.
+
+Notes from discussion with DW:
+- Could we build this concept into `datapoint`, as follows:
+  1. If we already provide a STAC interface - use that.
+  2. If we have captured the templating components for a given dataset, put them in a basic STAC Collection record - use that.
+  3. Allow users to define their own `Dataset Collection/Loader`, where they provide the templating components - use that.
+- The end result is that everything works through a single `datapoint` interface.
 """
 
 class DatasetLoader:
