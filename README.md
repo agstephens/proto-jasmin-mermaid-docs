@@ -15,7 +15,7 @@ Users will often start their journey with a Python script (`*.py`) or Jupyter No
 config:
   theme: 'default'
   themeVariables:
-    fontSize: 9pt
+    fontSize: 12pt
 ---
  flowchart TD
     START --> PY_IPYNB{User has Python or Jupyter Notebook file}
