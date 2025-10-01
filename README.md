@@ -115,11 +115,11 @@ flowchart TD
 
     REQS --> JNS[Using JASMIN Notebook <br/>Service or<br/> servers #40;<code>sci</code> servers / LOTUS#41;]
 
-    JNS -->|Yes| DASK{Planning to use Dask-Gateway<br/>with Conda environment?}
+    JNS -->|Yes| DASK{Planning to use <br/>Dask-Gateway<br/>with Conda environment?}
 
     USE_DASK[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#using-dask-gateway">See instructions on <br/>Dask-Gateway</a>]
     DASK -->|Yes| USE_DASK
-    DASK -->|No| GPU_JNS{Do you need access to <br/>GPUs? #40;For Machine Learning / CUDA#41;}
+    DASK -->|No| GPU_JNS{Do you need <br/>access to GPUs? <br/>#40;For Machine Learning / CUDA#41;}
 
     GPU_JNS -->|Yes| START_JNS_GPU[Start Notebook Service with GPUs]
     GPU_JNS -->|No| START_JNS_CPU[Start Notebook Service with CPUs]
@@ -140,7 +140,7 @@ flowchart TD
 
     TEST_IMP_JNS --> RUN_NB[Run the Jupyter Notebook]
 
-    JNS -->|No| GPU_SCI{Do you need access to GPUs?<br/>#40;For Machine Learning / CUDA#41;}
+    JNS -->|No| GPU_SCI{Do you need <br/>access to GPUs? <br/>#40;For Machine Learning / CUDA#41;}
     GPU_SCI -->|Yes| LOGIN_GPU[Login to interactive GPU node]
     GPU_SCI -->|No| LOGIN_CPU[Login to <code>sci</code> server]
 
