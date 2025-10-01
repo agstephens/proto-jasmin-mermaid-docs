@@ -18,7 +18,7 @@ config:
     fontSize: 9pt
 ---
  flowchart TD
-    START --> PY_IPYNB{User has Python script or\n Jupyter Notebook file}
+    START --> PY_IPYNB{User has Python script or <br/>Jupyter Notebook file}
 
     C1@{ shape: brace-r, label: "<b>Prerequesites</b>:
         User has <a href='http://help.jasmin.ac.uk/docs/getting-started/get-login-account/'>jasmin-login</a> 
