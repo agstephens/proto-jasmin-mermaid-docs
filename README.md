@@ -229,9 +229,9 @@ config:
     fontSize: 9pt
 ---
 flowchart TD
-    NB[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#python-best-practice">Convert Jupyter Notebook to a Python script and library</a>]
+    NB[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#python-best-practice">Convert Jupyter Notebook to <br/>a Python script and library</a>]
 
-    NB --> CODE_READY[Code refactored into a script and library of reusable components]
+    NB --> CODE_READY[Code refactored into <br/>a script and library of <br/>reusable components]
 
     NB ~~~ C1@{ shape: brace-l, label: "Factor out changeable settings to</b>:
         - command-line arguments
@@ -258,9 +258,9 @@ flowchart TD
     - Optimise use of GPUs (if relevant)"}
 
     TEST_RUN --> REFINE[Refine resource needs #40;per job#41;:
-    - Duration, CPU, Memory, GPU, exclusive/shared node]
+    - Duration, CPU, Memory, <br/>GPU, exclusive/shared node]
 
-    TEST_RUN ~~~ C3@{ shape: brace-l, label: "Accurate resource requests<br/>mean your <b>jobs run quicker!</b>"}
+    TEST_RUN ~~~ C3@{ shape: brace-l, label: "Accurate resource <br/>requests mean your <br/><b>jobs run quicker!</b>"}
 
     REFINE --> FULL_RUN[Submit and run entire workflow]
 
