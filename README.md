@@ -113,29 +113,29 @@ flowchart TD
 
     REQS[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-your-dependencies-using-a-requirements-file">Capture software dependencies</a>]
 
-    REQS --> JNS[Using JASMIN Notebook Service or<br/> servers #40;<code>sci</code> servers / LOTUS#41;]
+    REQS --> JNS[Using JASMIN Notebook <br/>Service or<br/> servers #40;<code>sci</code> servers / LOTUS#41;]
 
     JNS -->|Yes| DASK{Planning to use Dask-Gateway<br/>with Conda environment?}
 
-    USE_DASK[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#using-dask-gateway">See instructions on Dask-Gateway</a>]
+    USE_DASK[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#using-dask-gateway">See instructions on <br/>Dask-Gateway</a>]
     DASK -->|Yes| USE_DASK
-    DASK -->|No| GPU_JNS{Do you need access to GPUs?<br/>#40;For Machine Learning / CUDA#41;}
+    DASK -->|No| GPU_JNS{Do you need access to <br/>GPUs? #40;For Machine Learning / CUDA#41;}
 
     GPU_JNS -->|Yes| START_JNS_GPU[Start Notebook Service with GPUs]
     GPU_JNS -->|No| START_JNS_CPU[Start Notebook Service with CPUs]
 
     START_JNS_GPU --> CHECK_GPU[Check access to GPUs]
 
-    JNS_BASH[Start Bash terminal in Notebook Service]
+    JNS_BASH[Start Bash terminal in <br/>Notebook Service]
 
     CHECK_GPU --> JNS_BASH    
     START_JNS_CPU --> JNS_BASH
 
-    JNS_BASH --> VENV_JNS[<a href="">Create virtual environment in Bash session</a>]
-    VENV_JNS --> KERNEL[<a href="">Create IPython Kernel and install it</a>]
-    KERNEL --> RELOAD[Reload page #40;by refreshing browser#41;]
+    JNS_BASH --> VENV_JNS[<a href="">Create virtual environment <br/>in Bash session</a>]
+    VENV_JNS --> KERNEL[<a href="">Create IPython Kernel and <br/>install it</a>]
+    KERNEL --> RELOAD[Reload page #40;by <br/>refreshing browser#41;]
 
-    RELOAD --> LAUNCH_NB[Start the Notebook Launcher and select your new kernel]
+    RELOAD --> LAUNCH_NB[Start the Notebook Launcher and <br/>select your new kernel]
     LAUNCH_NB --> TEST_IMP_JNS[Test software imports]
 
     TEST_IMP_JNS --> RUN_NB[Run the Jupyter Notebook]
@@ -145,7 +145,7 @@ flowchart TD
     GPU_SCI -->|No| LOGIN_CPU[Login to <code>sci</code> server]
 
     LOGIN_GPU --> JASPY_BASE[Assume software to be built on<br/>top of <a href="https://help.jasmin.ac.uk/docs/software-on-jasmin/jaspy-envs/"><code>Jaspy</code> environment<a/>]
-    JASPY_BASE --> _1[#darr;] --> _2[#darr;] --> VENV_SCI[<a href="">Create virtual environment in Bash session</a>]
+    JASPY_BASE --> _1[#darr;] --> _2[#darr;] --> VENV_SCI[<a href="">Create virtual environment <br/>in Bash session</a>]
 
     VENV_SCI --> _3[#darr;] --> _4[#darr;] --> _5[#darr;] --> TEST_IMP_SCI[Test software imports]
     TEST_IMP_SCI --> RUN_SCI[Run the workflow]
