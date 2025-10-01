@@ -111,7 +111,7 @@ Managing software environments on JASMIN can be confusing unless you clearly und
 flowchart TD
     NEED[Need software on JASMIN] --> REQS
 
-    REQS[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-your-dependencies-using-a-requirements-file">Capture software dependencies</a>]
+    REQS[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-your-dependencies-using-a-requirements-file">Capture software <br/>dependencies</a>]
 
     REQS --> JNS[Using JASMIN Notebook <br/>Service or<br/> servers #40;<code>sci</code> servers / LOTUS#41;]
 
@@ -119,7 +119,7 @@ flowchart TD
 
     USE_DASK[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#using-dask-gateway">See instructions on <br/>Dask-Gateway</a>]
     DASK -->|Yes| USE_DASK
-    DASK -->|No| GPU_JNS{Do you need <br/>access to GPUs? <br/>#40;For Machine Learning / CUDA#41;}
+    DASK -->|No| GPU_JNS{Do you need <br/>access to GPUs? <br/>#40;For Machine Learning / <br/>CUDA#41;}
 
     GPU_JNS -->|Yes| START_JNS_GPU[Start Notebook Service with GPUs]
     GPU_JNS -->|No| START_JNS_CPU[Start Notebook Service with CPUs]
@@ -140,7 +140,7 @@ flowchart TD
 
     TEST_IMP_JNS --> RUN_NB[Run the Jupyter Notebook]
 
-    JNS -->|No| GPU_SCI{Do you need <br/>access to GPUs? <br/>#40;For Machine Learning / CUDA#41;}
+    JNS -->|No| GPU_SCI{Do you need <br/>access to GPUs? <br/>#40;For Machine Learning / <br/>CUDA#41;}
     GPU_SCI -->|Yes| LOGIN_GPU[Login to interactive GPU node]
     GPU_SCI -->|No| LOGIN_CPU[Login to <code>sci</code> server]
 
