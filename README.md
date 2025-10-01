@@ -27,7 +27,7 @@ config:
     PY_IPYNB -->|'.ipynb' file| START_NBS[<a href="https://help.jasmin.ac.uk/docs/interactive-computing/jasmin-notebooks-service/#using-the-jasmin-notebook-service">Start Notebook Service</a>]
     PY_IPYNB -->|'.py' file| CONVERT_PY[Convert to Ipython Notebook]
 
-    PY_IPYNB ~~~ C2@{ shape: brace-l, label: "Simple method: paste sections of Python script into Notebook cells"}
+    PY_IPYNB ~~~ C2@{ shape: brace-l, label: "Simple method: paste sections of <br/>Python script into Notebook cells"}
 
     CONVERT_PY --> START_NBS
     START_NBS ~~~ C3@{ shape: brace-r, label: "Plan data inputs and outputs.<br/>Do you have space to write your data files?"}
@@ -36,14 +36,14 @@ config:
 
     DATA_NEEDS --> SW_NEEDS{<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#software-management">Options for managing software needs</a>}
 
-    SW_NEEDS -->|Use built-in Jaspy environment with no modifications| TEST_RUN[Test run workflow with small data volume]
-    SW_NEEDS -->|Plan to build a local Python virtual environment| VENV_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#building-virtual-environments">Install and build a Python virtual environment</a>]
-    SW_NEEDS -->|Plan to use Dask-Gateway and will build a local Conda environment| CONDA_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#using-dask-gateway">Install and build a Conda environment for Dask-Gateway</a>]
+    SW_NEEDS -->|Use built-in Jaspy environment <br/>with no modifications| TEST_RUN[Test run workflow with <br/>small data volume]
+    SW_NEEDS -->|Plan to build a local <br/>Python virtual environment| VENV_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#building-virtual-environments">Install and build a <br/>Python virtual environment</a>]
+    SW_NEEDS -->|Plan to use Dask-Gateway and <br/>will build a local Conda environment| CONDA_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#using-dask-gateway">Install and build a <br/>Conda environment for Dask-Gateway</a>]
 
     DATA_NEEDS ~~~ C4@{ shape: brace-l, label: "<b>WARNING!</b><br/><a href='https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-your-home-directory'>Check your HOME directory<br/>doesn't fill up!</a>"}
     VENV_INSTALL --> TEST_RUN
 
-    TEST_RUN --> FULL_RUN{Is Notebook Service suitable for the full workflow?}
+    TEST_RUN --> FULL_RUN{Is Notebook Service suitable <br/>for the full workflow?}
 
     C5@{ shape: brace-r, label: "<b>Test and iterate - consider:</b>
     - Is data I/O efficient?
@@ -57,7 +57,7 @@ config:
     - Migrate to alternative platform (e.g. ISAMBARD-AI)?"}
 
     FULL_RUN -->|Yes| COMPLETE[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#workflow-completion">Complete the workflow and tidy up</a>]
-    FULL_RUN -->|No| MIGRATE[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#workflow-migration">Migrate workflow to LOTUS or alternative platform</a>]
+    FULL_RUN -->|No| MIGRATE[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#workflow-migration">Migrate workflow to LOTUS or <br/>alternative platform</a>]
 ```
 
 ---
