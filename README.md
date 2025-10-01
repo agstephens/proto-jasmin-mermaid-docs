@@ -38,7 +38,7 @@ config:
 
     SW_NEEDS -->|Use built-in Jaspy environment <br/>with no modifications| TEST_RUN[Test run workflow with <br/>small data volume]
     SW_NEEDS -->|Plan to build a local <br/>Python virtual environment| VENV_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#building-virtual-environments">Install and build a <br/>Python virtual environment</a>]
-    SW_NEEDS -->|Plan to use Dask-Gateway and <br/>will build a local Conda environment| CONDA_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#using-dask-gateway">Install and build a <br/>Conda environment for Dask-Gateway</a>]
+    SW_NEEDS -->|Plan to use Dask-Gateway and <br/>will build a local Conda environment| CONDA_INSTALL[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#using-dask-gateway">Install and build a <br/>Conda environment for <br/>Dask-Gateway</a>]
 
     DATA_NEEDS ~~~ C4@{ shape: brace-l, label: "<b>WARNING!</b><br/><a href='https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-your-home-directory'>Check your HOME directory<br/>doesn't fill up!</a>"}
     VENV_INSTALL --> TEST_RUN
@@ -48,13 +48,13 @@ config:
     C5@{ shape: brace-r, label: "<b>Test and iterate - consider:</b>
     - Is data I/O efficient?
     - Is GPU being utilised (if required)
-    - Is GPU/CUDA usage optimised (if required)
-    - Are local disk read/writes optimised?"} ~~~ FULL_RUN
+    - Is GPU/CUDA usage optimised <br/>(if required)
+    - Are local disk read/writes <br/>optimised?"} ~~~ FULL_RUN
 
     TEST_RUN ~~~ C6@{ shape: brace-l, label: "**Notebook Service has limited resource**
-    - Migrate to batch system (LOTUS/ORCHID)?
-    - Convert to using Dask-Gateway (with Conda env)?
-    - Migrate to alternative platform (e.g. ISAMBARD-AI)?"}
+    - Migrate to batch system <br/>(LOTUS/ORCHID)?
+    - Convert to using Dask-Gateway <br/>(with Conda env)?
+    - Migrate to alternative platform <br/>(e.g. ISAMBARD-AI)?"}
 
     FULL_RUN -->|Yes| COMPLETE[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#workflow-completion">Complete the workflow and tidy up</a>]
     FULL_RUN -->|No| MIGRATE[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#workflow-migration">Migrate workflow to LOTUS or <br/>alternative platform</a>]
