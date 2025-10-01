@@ -113,7 +113,7 @@ flowchart TD
 
     REQS[<a href="https://github.com/agstephens/proto-jasmin-mermaid-docs/blob/main/README.md#managing-your-dependencies-using-a-requirements-file">Capture software <br/>dependencies</a>]
 
-    REQS --> JNS[Using JASMIN Notebook <br/>Service or<br/> servers #40;<code>sci</code> servers / LOTUS#41;]
+    REQS --> JNS[Using JASMIN Notebook <br/>Service or<br/> servers #40;<code>sci</code> <br/>servers / LOTUS#41;]
 
     JNS -->|Yes| DASK{Planning to use <br/>Dask-Gateway<br/>with Conda environment?}
 
@@ -244,7 +244,7 @@ flowchart TD
     CODE_READY --> GPU_REQ[Do you require GPUs?]
 
     GPU_REQ -->|No| CPU_NODE[Create environment on <code>sci</code> server] --> WRAPPER
-    GPU_REQ -->|Yes| GPU_NODE[Login to interactive GPU node<br/>to create GPU-aware environment] --> WRAPPER
+    GPU_REQ -->|Yes| GPU_NODE[Login to interactive GPU <br/>node to create GPU-aware <br/>environment] --> WRAPPER
 
     WRAPPER[Write Bash wrapper script:<br/><code>setup-env.sh</code>] --> TEST_RUN[Run 1 iteration on Slurm node]
 
